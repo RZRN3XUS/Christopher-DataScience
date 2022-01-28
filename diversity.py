@@ -4,8 +4,12 @@
 
 import os
 import csv
-from tokenize import group
 os.system('cls')
+
+#Analyze the data set and describe some studies you could do with this data. If any bad data or values that would need to be replaced?
+#Remove data with NA as state
+#Can compare percentages of populations of minorities within schools and states
+#There really isn't any data that is "bad" or needs to be replaced
 
 file = open('diversity_school.csv')
 
@@ -57,16 +61,16 @@ for state in range(len(states)):
     print(states[state] + '\'s largest ethinicity population enrolled in university is ' + str(groups[groupcounts.index(max(groupcounts))]) + ' at ' + str(max(groupcounts)))
 
 #Add a column for a percentage of race per university
-universities = []
-for row in diversityList:
-    if row[0] not in universities:
-        universities.append(row[0])
+#universities = []
+#for row in diversityList:
+#    if row[0] not in universities:
+#        universities.append(row[0])
 
-for school in range(len(universities)):
-    population = 0
-    for row in diversityList:
-        if row[0] == universities[school]:
-            population += int(row[4])
-    for row in diversityList:
-        if row[0] == universities[school] and row[3] != 'Total Minority' and row[3] != 'Women' and row[3] != 'Unknown':
-            print(universities[school] + ' is ' + str(round(int(row[4])/population, 2) * 100) + '% ' + row[3])
+#for school in range(len(universities)):
+#    population = 0
+#    for row in diversityList:
+#        if row[0] == universities[school]:
+#            population += int(row[4])
+#    for row in diversityList:
+#        if row[0] == universities[school] and row[3] != 'Total Minority' and row[3] != 'Women' and row[3] != 'Unknown':
+#            print(universities[school] + ' is ' + str(round(int(row[4])/population, 2) * 100) + '% ' + row[3])
