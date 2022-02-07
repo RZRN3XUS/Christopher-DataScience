@@ -3,9 +3,7 @@
 #Prepare dataset using CSV values
 #Change female/male and smoker/nonsmoker to 0 and 1
 
-import csv
-import os
-import math
+import csv, os, numpy
 os.system('cls')
 file = open('insurance_data.csv')
 
@@ -15,6 +13,8 @@ print(header)
 insuranceData = []
 for row in insuranceFile:
     insuranceData.append(row)
+insuranceFile.close()
+print(insuranceData)
 #change female to 0
 #change male to 1
 for i in range(len(insuranceData)):
